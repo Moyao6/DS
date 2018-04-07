@@ -24,11 +24,15 @@
 #define sf2(a,b) scanf("%lf%lf",&a,&b)
 #define mp(a,b) make_pair(a,b)
 using namespace std;
-typedef long long ll;
-int d(int x){
-    return 1;
+template <typename T>
+void run(T x, int y){
+    cout << "函数隐式实例化" << endl;
+}
+
+template<> void run<int> (int x, int y){
+    cout << "函数显式具体化"<<endl;
 }
 int main(){
-    
+    run('1','1');
     return 0;
 }
